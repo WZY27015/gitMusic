@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+ <head>
+	  <meta charset="utf-8" >
+	  <meta name="viewport" content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi ">  
+	  <title>我的音乐</title>
+	  
+	  
+  <style type="text/css">
+	*{margin:0px;padding:0px;}
+	body{font-family:"微软雅黑";}
+	.max{width:300px;height:500px;margin:30px auto;}
+	
+	/*M_left start*/	
+	.max .M_left{float:left;width:300px;height:400px;}
+		 /*动画css start*/	
+		.max .animo{animation:myfirst 5s;position:relative;	-webkit-animation:myfirst 5s; /* Safari and Chrome */}
+		
+	.max .M_left .L_top{height:40px;width:100%;background:#d3d3d3;border-radius:5px 5px 0px 0px;}
+	.max .M_left .L_top h2{text-align:center;line-height:38px;font-weight:500;font-size:24px;}
+	.max .M_left .L_middle{height:420px;width:290px;background:#9db9aa;padding-left:10px;
+	line-height:24px;overflow:auto;font-size:14px;}
+	.max .M_left .L_middle.text:hover{background:#bab554;}
+	.max .M_left .L_bottom{height:40px;width:300px;background:#d3d3d3;border-radius: 0px 0px 5px 5px;}
+	.max .M_left .L_bottom ul li{float:left;width:100px;height:40px;list-style:none;
+	text-align:center;border-radius: 20px 20px 20px 20px;}
+	.max .M_left .L_bottom ul li:hover{background:#a2a2a2;}
+	.max .M_left .L_bottom ul li a{font-size:20px;text-decoration:none;line-height:37px;color:#fff;}
+	/*end M_left*/
+
+	/*M_right start*/
+	.max .M_right{width:300px;height:400px;color:#fff; position: absolute;top:30px;}
+	
+		.max .hiddenM{animation:hiddenM 5s;position:absolute;	-webkit-animation:hiddenM 5s; /* Safari and Chrome */}
+		
+	.max .M_right .r_title{height:40px;width:100%;background:#d3d3d3;border-radius:5px 5px 0px 0px;}
+	.max .M_right .M_content {width:300px;height:460px;overflow:auto;}
+	.max .M_right .M_content ul li{line-height:30px;padding-left:14px;background:#339933;font-size:16px;
+	list-style:none;border-bottom:1px solid #000;}
+	.max .M_right .M_content ul li a{text-decoration:none;color:#fff;}
+	.max .M_right .M_content ul li:hover{background:#33cc00;}
+	/*end M_right*/
+	#lrc{display:none;}
+	
+	
+	
+	
+	/*滚动条的样式*/
+	::-webkit-scrollbar{width:10px;height:6px;background:#ccc;}
+	::-webkit-scrollbar-button{background:#e5e5e5;}
+	::-webkit-scrollbar-track{background:#999;}
+	::-webkit-scrollbar-track-piece{background:#ccc;}
+	::-webkit-scrollbar-thumb{background:#666;}
+	::-webkit-scrollbar-corner{background:#82AFFF;}
+	::-webkit-scrollbar-resizer{background:#FFOEEE;}
+	scrollbar{-moz-appearance:none !important;background:rgb(0,255,0) !important;}
+	scrollbarbutton{-moz-appearance:none !important;background-color:rgb(0,0,255) !important;}
+    scrollbarbutton:hover{-moz-appearance:none !important;background-color:rgb(255,0,0) !important;}
+  	
+  	/*动画*/
+  		@keyframes myfirst
+		{
+			0%   {background:red; left:0px; top:30px;}
+			 
+			100% {background:red; left:300px; top:100px;}
+		}
+		
+		@keyframes hiddenM /* Safari and Chrome */
+		{
+			0%   {background:red; left:-300px; top:100px;}
+			 
+			100% {background:red; left:0px; top:-400px;}
+		}
+  	
+  </style>
+ </head>
+ <body>
+	<!--start max-->
+	<div class="max">
+		<!--M_left start-->
+		<div class="M_left ">
+			<div class="L_top">
+				<h2 id="m_title" >撒的看尽繁华</h2>
+			</div>
+			<div class="L_middle"></div>
+			<div class="L_bottom">
+				<ul>
+					<li><a href="#" id="zt" style="javascript();" onclick="returnList();">返回</a></li>
+					<li><a href="#" id="tz"  style="javascript();" onclick="stod(this);">暂停</a></li>
+					<li><a href="#" style="javascript();" onclick="returnList();">返回</a></li>
+				</ul>
+			</div>
+		</div>
+		<!--end M_left-->
+		
+		<!--start M_right-->
+		<div class="M_right">
+			<div class="r_title" style="text-align: center;line-height: 40px;">
+				<span id="showLrc" onclick="showLrc();" >显示歌词</span>
+			</div>
+			<div class="M_content">
+				  <ul>
+				    <li><a href="#" style="javascript();" onclick="play(1,this);showLrc();">渴望光荣</a></li>
+				    <li><a href="#" style="javascript();" onclick="play(10,this);showLrc();">李玉刚 - 刚好遇见你</a></li>
+				    <li><a href="#" style="javascript();" onclick="play(2,this);showLrc();">于湉 - 灯海</a></li>
+					<li><a href="#" style="javascript();" onclick="play(3,this);showLrc();">朴树 - 平凡之路</a></li>
+					<li><a href="#" style="javascript();" onclick="play(4,this);showLrc();">娄艺潇 - 泡沫</a></li>
+					<li><a href="#" style="javascript();" onclick="play(5,this);showLrc();">一笑倾城</a></li>
+					<li><a href="#" style="javascript();" onclick="play(6,this);showLrc();">夜空中最亮的星</a></li>
+					<li><a href="#" style="javascript();" onclick="play(18,this);showLrc();">李佳薇 - 征服</a></li>
+					<li><a href="#" style="javascript();" onclick="play(8,this);showLrc();">旅程</a></li>
+					<li><a href="#" style="javascript();" onclick="play(9,this);showLrc();">阿杜 - 撕夜</a></li>
+					
+					<li><a href="#" style="javascript();" onclick="play(11,this);showLrc();">古巨基 - 好想好想</a></li>
+					<li><a href="#" style="javascript();" onclick="play(12,this);showLrc();">刘惜君 - 我很快乐</a></li>
+					<li><a href="#" style="javascript();" onclick="play(13,this);showLrc();">Glee Cast - Firework</a></li>
+					<li><a href="#" style="javascript();" onclick="play(14,this);showLrc();">张碧晨 - 年轮</a></li>
+					<li><a href="#" style="javascript();" onclick="play(15,this);showLrc();">魏晨,于莎莎 - 有你的幸福</a></li>
+					<li><a href="#" style="javascript();" onclick="play(16,this);showLrc();">洪雨雷 - 遇见</a></li>
+					<li><a href="#" style="javascript();" onclick="play(17,this);showLrc();">G.E.M.邓紫棋 - 爱你A.I.N.Y.2017</a></li>
+					
+					<li><a href="#" style="javascript();" onclick="play(19,this);showLrc();">渴望光荣</a></li>
+					<li><a href="#" style="javascript();" onclick="play(20,this);showLrc();">渴望光荣</a></li>
+					<li><a href="#" style="javascript();" onclick="play(21,this);showLrc();">陈奕迅 - 红玫瑰</a></li>
+				  </ul>
+			 </div>
+			 <a href="">链接跳转</a>
+		</div>
+		<!--end M_right-->
+		
+	</div>
+	<!--end max-->
+	<textarea id="lrc">
+		[ti:撕夜]
+		[ar:阿杜]
+		[al:天黑]
+
+		[00:00.03]撕夜
+		[00:04.38]作词：王武雄 作曲：蔡政勋
+		[00:08.23]演唱：阿杜
+		[00:12.01]
+		[00:16.45]我把梦撕了一页
+		[00:19.17]不懂明天该怎么写
+		[00:23.03]冷冷的街 冷冷的灯 照着谁
+		[00:27.30]
+		[00:31.55]一场雨湿了一夜
+		[00:34.27]你的温柔该怎么给
+		[00:37.78]冷冷的风 冷冷地吹 不停歇
+		[00:42.55]
+		[00:45.40]那个人在天桥下
+		[00:47.66]留下等待工作的电话号码
+		[00:53.71]我想问他   多少人打给他
+		[01:00.49]随手放开电话上
+		[01:02.94]那本指引迷途心灵的密码
+		[01:08.91]我的未来 依然没有解答
+		[01:13.10]
+		[01:17.24]旧电话撕了一页
+		[01:20.07]我的朋友还剩下谁
+		[01:23.91]冷冷的心 冷冷的梦 在哽咽
+		[01:28.26]
+		[01:32.55]两个人撕了一夜
+		[01:35.23]抱得再紧也不能睡
+		[01:39.61]冷冷的你 冷冷的泪 湿了夜
+		[01:43.31]
+		[02:03.03]我把梦撕了一页
+		[02:05.73]不懂明天该怎么写
+		[02:09.54]冷冷的街 冷冷的灯 照着谁
+		[02:13.90]
+		[02:18.21]一场雨湿了一夜
+		[02:20.98]你的温柔该怎么给
+		[02:24.81]冷冷的风 冷冷地吹 不停歇
+		[02:29.27]
+		[02:32.11]那个人在天桥下
+		[02:34.28]留下等待工作的电话号码
+		[02:40.33]我想问他   多少人打给他
+		[02:47.12]随手放开电话上
+		[02:49.54]那本指引迷途心灵的密码
+		[02:55.46]我的未来 依然没有解答
+		[02:59.83]
+		[03:02.60]那个人在天桥下
+		[03:04.70]留下等待工作的电话号码
+		[03:10.78]我想问他   多少人打给他
+		[03:17.61]随手放开电话上
+		[03:19.99]那本指引迷途心灵的密码
+		[03:26.07]我的未来 依然没有解答
+		[03:30.22]
+		[03:34.34]旧电话撕了一页
+		[03:37.09]我的朋友还剩下谁
+		[03:40.99]冷冷的心 冷冷的梦 在哽咽
+		[03:49.64]两个人撕了一夜
+		[03:52.41]抱得再紧也不能睡
+		[03:56.20]冷冷的你 冷冷的泪 湿了夜
+		[04:03.94]冷冷的你 冷冷的泪 湿了夜
+		[04:11.27]
+	</textarea>
+
+	<!-- js块区-->
+	<script src="js/jquery-3.1.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		
+		//创建一个Mp3播放器
+		var audioDom = document.createElement("audio");
+		//点击播放
+		function play(name,obj){
+
+			//音乐的播放地址
+			audioDom.src = "Mp3/"+name+".mp3";
+			//自动播放
+			audioDom.autoplay = "audioplay";
+			//歌名切换
+			$("#m_title").text($(obj).text());
+
+			//获取歌词
+			var lrc = $("#lrc").val();
+			//分离时间和歌词
+			var lrcArr=lrc.split("[");
+			console.log(lrcArr);
+			var html = "";
+			for(var i = 0 ;i < lrcArr.length;i++){
+				//第二次分离"]"
+				var arr = lrcArr[i].split("]");
+
+				console.log(arr);
+				//取到歌词
+				var message = arr[1];
+				//alert(message);
+				if(message){
+					html += "<div class='text'>"+message+"</div>";	
+				}
+			}
+				$(".L_middle").html(html);
+		}
+		//暂停播放
+		function zystod(obj){
+			//alert("alkjsdlk");
+			//audioDom.autoplay = "audioplay";
+			audioDom.pause();  
+		}
+		
+		//播放
+		function stod(obj){
+			var value = $('#tz').text();
+			 
+			if(value == '暂停'){
+				$('#tz').text("播放");
+				audioDom.pause();
+			}if(value == '播放'){
+				$('#tz').text("暂停");
+				audioDom.play();
+			}
+			 
+			 //audioDom.autoplay = "audioplay";
+			//audioDom.pause();  
+		}
+		 
+		
+		function showLrc(){
+			 $('.M_right').hide();
+			 $('.M_left').show();
+			 //$('.M_right').hide();
+			
+		}
+		function returnList(){
+			
+			 $('.M_left').hide();
+			  $('.M_right').show();
+		}
+	</script>
+ </body>
+<html>
